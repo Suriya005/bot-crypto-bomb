@@ -6,17 +6,12 @@ root = Tk()
 root.title("Bot BombCrypto")
 root.geometry("300x400")
 
-# region=(1920, 0, 800, 700)
-# myScreen = 450, 150, 950, 650
-
 class BombCryptoBot:
     def __init__(self, x, y , width, height):
-        # self.screen = (x, y, width, height)
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        # self.imageLocation = None
         self.resetLoop = 99 
         self.resetTime = 240000
         self.workTime = 5 * 60 * 1000
@@ -65,12 +60,6 @@ class BombCryptoBot:
             pyautogui.click(okIcon, duration=0.5)
             pyautogui.click(okIcon, duration=0.5)
             self.connectWallet()
-        # networkLost = self.searchPositoinImage('error_img/network_error.png', 10)
-        # if networkLost != None:
-        #     self.connectWallet()
-        # loginError = self.searchPositoinImage('error_img/login_error', 10)
-        # if loginError != None:
-        #     pass
     
     def connectWallet(self):
         time.sleep(10)
@@ -90,15 +79,7 @@ class BombCryptoBot:
                 pyautogui.moveTo(okIcon, duration=0.5)
                 pyautogui.click(okIcon)
                 self.connectWallet()
-            
-            # notConnect = self.searchPositoinImage('error_img/not_connect', 10)
-            # if notConnect != None:
-            #     self.connectWallet()
-                
-            # logged = self.searchPositoinImage('error_img/login_error', 10)
-            # if logged != None:
-            #     self.connectWallet()
-                
+
     def botIsWork(self):
         print("5 seconds later, work all!!!")
         time.sleep(5)
@@ -253,181 +234,5 @@ testBtn = Button(root, text="Test", command=testStr).pack()
 startButton = Button(root, text="Start", command=bot1.botIsWork,
                      width=10, fg="green", bg="black").pack()
 root.mainloop()
-
-
-
-
-# def workAll():
-#     print("work!!")
-#     while True:
-#         indexPage = pyautogui.locateCenterOnScreen(
-#             'img/index.png', region=(450, 150, 950, 650))
-#         if indexPage != None:
-#             pyautogui.moveTo(indexPage, duration=0.5)
-#             pyautogui.click(indexPage)
-#             print("come to index page")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see index page")
-
-#     while True:
-#         up_icon = pyautogui.locateCenterOnScreen(
-#             'img/up_icon.png', region=(450, 150, 950, 650))
-#         if up_icon != None:
-#             pyautogui.moveTo(up_icon, duration=0.5)
-#             pyautogui.click(up_icon)
-#             print("come to up_icon")
-#             # time.sleep(5)
-#             # pyautogui.click(up_icon)
-#             pyautogui.moveTo(x=500, y=0, duration=0.5)
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see up_icon")
-
-#     while True:
-#         knight_icon = pyautogui.locateCenterOnScreen('img/knight_icon.png', region=(450, 150, 950, 650))
-#         if knight_icon != None:
-#             pyautogui.moveTo(knight_icon, duration=0.5)
-#             pyautogui.click(knight_icon)
-#             print("come to knight_icon")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see knight_icon")
-#     work_count = 0
-#     while True:
-#         work_all = pyautogui.locateCenterOnScreen(
-#             'img/work_all.png', region=(450, 150, 950, 650))
-#         if work_all != None:
-#             pyautogui.moveTo(work_all, duration=0.5)
-#             pyautogui.click(work_all)
-#             print("come to work_all")
-#             time.sleep(2)
-#             break
-        
-#         elif work_count > 10:
-#             break
-        
-#         else:
-#             print("I can't see work_all")
-#             work_count += 1
-
-#     while True:
-#         close_icon = pyautogui.locateCenterOnScreen(
-#             'img/close_icon.png', region=(450, 150, 950, 650))
-#         if close_icon != None:
-#             pyautogui.moveTo(close_icon, duration=0.5)
-#             pyautogui.click(close_icon)
-#             print("come to close_icon")
-#             time.sleep(5)
-#             pyautogui.click(close_icon)
-#             break
-#         else:
-#             print("I can't see close_icon")
-#     root.after(240000, resetScreen)
-#     root.after(300000, restAll)
-
-
-# def resetScreen():
-#     print("start resetScreen")
-#     while True:
-#         back_icon = pyautogui.locateCenterOnScreen(
-#             'img/back_icon.png', region=(450, 150, 950, 650))
-#         if back_icon != None:
-#             pyautogui.moveTo(back_icon, duration=0.5)
-#             pyautogui.click(back_icon)
-#             print("come to back_icon")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see back_icon")
-
-#     while True:
-#         indexPage = pyautogui.locateCenterOnScreen(
-#             'img/index.png', region=(450, 150, 950, 650))
-#         if indexPage != None:
-#             pyautogui.moveTo(indexPage, duration=0.5)
-#             pyautogui.click(indexPage)
-#             print("come to index page")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see index page")
-#     # root.after(240000, resetScreen)
-
-
-# def restAll():
-#     print("sleep")
-    
-#     while True:
-#         up_icon = pyautogui.locateCenterOnScreen(
-#             'img/up_icon.png', region=(450, 150, 950, 650))
-#         if up_icon != None:
-#             pyautogui.moveTo(up_icon, duration=0.5)
-#             pyautogui.click(up_icon)
-#             print("come to up_icon")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see up_icon")
-            
-#     pyautogui.moveTo(x=500, y=0, duration=0.5)
-#     while True:
-#         knight_icon = pyautogui.locateCenterOnScreen('img/knight_icon.png', region=(450, 150, 950, 650))
-#         if knight_icon != None:
-#             pyautogui.moveTo(knight_icon, duration=0.5)
-#             pyautogui.click(knight_icon)
-#             print("come to knight_icon")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see knight_icon")
-    
-#     rest_count = 0
-#     while True:
-#         rest_all = pyautogui.locateCenterOnScreen(
-#             'img/rest_all.png', region=(450, 150, 950, 650))
-#         if rest_all != None:
-#             pyautogui.moveTo(rest_all, duration=0.5)
-#             pyautogui.click(rest_all)
-#             print("come to rest_all")
-#             time.sleep(2)
-#             break
-        
-#         elif rest_count > 10:
-#             break
-        
-#         else:
-#             print("I can't see rest_all")
-#             rest_count += 1      
-            
-#     while True:
-#         close_icon = pyautogui.locateCenterOnScreen(
-#             'img/close_icon.png', region=(450, 150, 950, 650))
-#         if close_icon != None:
-#             pyautogui.moveTo(close_icon, duration=0.5)
-#             pyautogui.click(close_icon)
-#             print("come to close_icon")
-#             time.sleep(5)
-#             pyautogui.click(close_icon)
-#             break
-#         else:
-#             print("I can't see close_icon")
-    
-#     while True:
-#         back_icon = pyautogui.locateCenterOnScreen(
-#             'img/back_icon.png', region=(450, 150, 950, 650))
-#         if back_icon != None:
-#             pyautogui.moveTo(back_icon, duration=0.5)
-#             pyautogui.click(back_icon)
-#             print("come to back_icon")
-#             time.sleep(2)
-#             break
-#         else:
-#             print("I can't see back_icon")
-#     root.after(600000, workAll)
-
 
 
